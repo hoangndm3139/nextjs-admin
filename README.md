@@ -69,4 +69,3 @@ Where:
 | revert   | Revert previous commit                                     |
 | style    | Code style changes (formatting, missing semi-colons, etc.) |
 | test     | Add or update tests                                        |
-
