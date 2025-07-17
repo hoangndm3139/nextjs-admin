@@ -48,7 +48,7 @@ export default async function RootLayout({
           fontVariables
         )}
       >
-        <NextTopLoader showSpinner={false} />
+        <NextTopLoader showSpinner={false} color='#e5aa18' />
         <NuqsAdapter>
           <ThemeProvider
             attribute='class'
