@@ -1,115 +1,121 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/9113740/201498864-2a900c64-d88f-4ed4-b5cf-770bcb57e1f5.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/9113740/201498152-b171abb8-9225-487a-821c-6ff49ee48579.png">
-</picture>
+## Commit Code Guidelines
 
-<div align="center"><strong>Next.js Admin Dashboard Starter Template With Shadcn-ui</strong></div>
-<div align="center">Built with the Next.js 15 App Router</div>
-<br />
-<div align="center">
-<a href="https://dub.sh/shadcn-dashboard">View Demo</a>
-<span>
-</div>
+To ensure consistency and clarity in commit history, please follow the commit rules below.
 
-## Overview
+#### Commit Message Structure
 
-This is a starter template using the following stack:
+```bash
+<type>: <subject>
 
-- Framework - [Next.js 15](https://nextjs.org/13)
-- Language - [TypeScript](https://www.typescriptlang.org)
-- Auth - [Clerk](https://go.clerk.com/ILdYhn7)
-- Error tracking - [<picture><img alt="Sentry" src="public/assets/sentry.svg">
-        </picture>](https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy26q2-nextjs&utm_content=github-banner-project-tryfree)
-- Styling - [Tailwind CSS v4](https://tailwindcss.com)
-- Components - [Shadcn-ui](https://ui.shadcn.com)
-- Schema Validations - [Zod](https://zod.dev)
-- State Management - [Zustand](https://zustand-demo.pmnd.rs)
-- Search params state manager - [Nuqs](https://nuqs.47ng.com/)
-- Tables - [Tanstack Data Tables](https://ui.shadcn.com/docs/components/data-table) • [Dice table](https://www.diceui.com/docs/components/data-table)
-- Forms - [React Hook Form](https://ui.shadcn.com/docs/components/form)
-- Command+k interface - [kbar](https://kbar.vercel.app/)
-- Linting - [ESLint](https://eslint.org)
-- Pre-commit Hooks - [Husky](https://typicode.github.io/husky/)
-- Formatting - [Prettier](https://prettier.io)
+<body>
 
-_If you are looking for a Tanstack start dashboard template, here is the [repo](https://git.new/tanstack-start-dashboard)._
-
-## Pages
-
-| Pages                                                                                 | Specifications                                                                                                                                                                                                                                                          |
-| :------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Signup / Signin](https://go.clerk.com/ILdYhn7)      | Authentication with **Clerk** provides secure authentication and user management with multiple sign-in options including passwordless authentication, social logins, and enterprise SSO - all designed to enhance security while delivering a seamless user experience. |
-| [Dashboard (Overview)](https://shadcn-dashboard.kiranism.dev/dashboard)    | Cards with Recharts graphs for analytics. Parallel routes in the overview sections feature independent loading, error handling, and isolated component rendering. |
-| [Product](https://shadcn-dashboard.kiranism.dev/dashboard/product)         | Tanstack tables with server side searching, filter, pagination by Nuqs which is a Type-safe search params state manager in nextjs                                                                                                                                       |
-| [Product/new](https://shadcn-dashboard.kiranism.dev/dashboard/product/new) | A Product Form with shadcn form (react-hook-form + zod).                                                                                                                                                                                                                |
-| [Profile](https://shadcn-dashboard.kiranism.dev/dashboard/profile)         | Clerk's full-featured account management UI that allows users to manage their profile and security settings                                                                                                                                                             |
-| [Kanban Board](https://shadcn-dashboard.kiranism.dev/dashboard/kanban)     | A Drag n Drop task management board with dnd-kit and zustand to persist state locally.                                                                                                                                                                                  |
-| [Not Found](https://shadcn-dashboard.kiranism.dev/dashboard/notfound)      | Not Found Page Added in the root level                                                                                                                                                                                                                                  |
-| [Global Error](https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy26q2-nextjs&utm_content=github-banner-project-tryfree)           | A centralized error page that captures and displays errors across the application. Integrated with **Sentry** to log errors, provide detailed reports, and enable replay functionality for better debugging. |
-
-## Feature based organization
-
-```plaintext
-src/
-├── app/ # Next.js App Router directory
-│ ├── (auth)/ # Auth route group
-│ │ ├── (signin)/
-│ ├── (dashboard)/ # Dashboard route group
-│ │ ├── layout.tsx
-│ │ ├── loading.tsx
-│ │ └── page.tsx
-│ └── api/ # API routes
-│
-├── components/ # Shared components
-│ ├── ui/ # UI components (buttons, inputs, etc.)
-│ └── layout/ # Layout components (header, sidebar, etc.)
-│
-├── features/ # Feature-based modules
-│ ├── feature/
-│ │ ├── components/ # Feature-specific components
-│ │ ├── actions/ # Server actions
-│ │ ├── schemas/ # Form validation schemas
-│ │ └── utils/ # Feature-specific utilities
-│ │
-├── lib/ # Core utilities and configurations
-│ ├── auth/ # Auth configuration
-│ ├── db/ # Database utilities
-│ └── utils/ # Shared utilities
-│
-├── hooks/ # Custom hooks
-│ └── use-debounce.ts
-│
-├── stores/ # Zustand stores
-│ └── dashboard-store.ts
-│
-└── types/ # TypeScript types
-└── index.ts
-```
-
-## Getting Started
-
-> [!NOTE]  
-> We are using **Next 15** with **React 19**, follow these steps:
-
-Clone the repo:
+<footer>
 
 ```
-git clone https://github.com/Kiranism/next-shadcn-dashboard-starter.git
-```
 
-- `pnpm install` ( we have legacy-peer-deps=true added in the .npmrc)
-- Create a `.env.local` file by copying the example environment file:
-  `cp env.example.txt .env.local`
-- Add the required environment variables to the `.env.local` file.
-- `pnpm run dev`
+Where:
 
-##### Environment Configuration Setup
+- **type**: The type of change (required, lowercase)
+- **subject**: A brief description of the change (required, no all caps, no period at the end)
+- **body**: A detailed description of the change, max 100 characters per line (optional, must follow rule if included)
+- **footer**: Additional information such as ticket ID, breaking changes, etc., max 100 characters per line (optional,
+  must follow rule if included)
 
-To configure the environment for this project, refer to the `env.example.txt` file. This file contains the necessary environment variables required for authentication and error tracking.
+#### Type
 
-You should now be able to access the application at http://localhost:3000.
+| Type     | Meaning                                                    |
+| -------- | ---------------------------------------------------------- |
+| build    | Changes related to the build system or dependencies        |
+| chore    | Miscellaneous tasks that don't affect source or tests      |
+| ci       | CI/CD configuration changes                                |
+| docs     | Documentation updates                                      |
+| feat     | Add new feature                                            |
+| fix      | Bug fix                                                    |
+| perf     | Performance optimization                                   |
+| refactor | Refactor code, no feature added or bug fixed               |
+| revert   | Revert previous commit                                     |
+| style    | Code style changes (formatting, missing semi-colons, etc.) |
+| test     | Add or update tests                                        |
 
-> [!WARNING]
-> After cloning or forking the repository, be cautious when pulling or syncing with the latest changes, as this may result in breaking conflicts.
+## Unit Test Requirements
 
-Cheers! 🥂
+#### Components
+
+- **Rendering**: Component renders correctly with default props
+- **Props**: Component updates correctly when props change
+- **Interactions**: Handles user events correctly (click, hover, input)
+- **State**: Manages internal state properly
+- **Conditional rendering**: Displays correct UI based on conditions
+- **Error states**: Handles errors properly
+
+#### Hooks
+
+- **Return values**: Hook returns correct values
+- **State updates**: State updates correctly when functions are called
+- **Side effects**: Side effects are triggered at the right time
+- **Error handling**: Handles errors properly
+
+#### Utility Functions
+
+- **Input/Output**: Function returns correct results for different inputs
+- **Edge cases**: Handles edge cases correctly
+- **Error handling**: Throws errors properly when needed
+
+#### API Routes
+
+- **Response format**: API returns data in the correct format
+- **Status codes**: Returns correct status codes
+- **Error handling**: Handles errors properly
+- **Authentication/Authorization**: Checks access rights correctly
+
+## Tutorial: Creating Components
+
+#### Atoms
+
+An atom is a component that meets the following criteria:
+
+- Is a generic component.
+- Cannot be broken down further.
+- Has complexity equivalent to a single HTML tag.
+
+Requirements when writing components:
+
+- Should extend props from HTML tags.
+- Highly customizable, ensuring reusability.
+- If not a reusable generic component, write code directly in the parent component or in the parent component's folder
+  inside molecules.
+
+#### Molecules
+
+A molecule is a component that meets the following criteria:
+
+- A simple component but more complex than atoms, performing a specific small function, possibly using multiple atoms
+  inside.
+
+Requirements when writing components:
+
+- Highly customizable, ensuring reusability (even if currently used by only one component).
+- Each molecule should handle only one specific function.
+
+#### Organisms
+
+An organism is a component that meets the following criteria:
+
+- Combines multiple molecules and atoms to create a more complex component.
+- Represents a UI block.
+
+Requirements when writing components:
+
+- Each component is a UI block.
+
+#### Templates
+
+Templates are specific layouts in the UI composed of multiple organisms or molecules.
+
+Requirements when writing components:
+
+- Each component corresponds to a section in the page.
+
+#### Pages
+
+Pages are located inside the app folder. Each page corresponds to a unique route. They are a combination of templates.
