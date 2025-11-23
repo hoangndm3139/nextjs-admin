@@ -115,6 +115,7 @@
   --color-fprimary-yellow: #ffbd1b;
   --color-fprimary-yellow-1: #e5aa18;
   --color-fblack-bg2: #202020;
+  --color-fprimary-blue: #007bff;
 }
 
 @layer base {

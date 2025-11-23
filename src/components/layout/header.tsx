@@ -13,12 +13,12 @@ export default function Header() {
         <Separator orientation='vertical' className='mr-2 h-4' />
         <Breadcrumbs />
       </div>
-
       <div className='flex items-center gap-2 px-4'>
         <div className='hidden md:flex'>
           <SearchInput />
         </div>
         <UserNav />
+        {/* <ModeToggle /> */}
       </div>
     </header>
   );

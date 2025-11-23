@@ -1,4 +1,3 @@
-import { fontVariables } from '@/lib/font';
 import ThemeProvider from '@/components/layout/ThemeToggle/theme-provider';
 import { cn } from '@/lib/utils';
 import type { Metadata, Viewport } from 'next';
@@ -7,6 +6,13 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import './globals.css';
 import './theme.css';
 import { Providers } from '@/components/layout/providers';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  variable: '--font-poppins',
+  subsets: ['latin'],
+  weight: ['400', '600', '700']
+});
 
 const META_THEME_COLORS = {
   light: '#ffffff',
@@ -45,14 +51,14 @@ export default async function RootLayout({
       <body
         className={cn(
           'bg-background overflow-hidden overscroll-none font-sans antialiased',
-          fontVariables
+          poppins
         )}
       >
-        <NextTopLoader showSpinner={false} color='#e5aa18' />
+        <NextTopLoader showSpinner={false} color='#007bff' />
         <NuqsAdapter>
           <ThemeProvider
             attribute='class'
-            defaultTheme='system'
+            defaultTheme='light'
             enableSystem
             disableTransitionOnChange
             enableColorScheme
